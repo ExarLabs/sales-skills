@@ -9,6 +9,7 @@
 !anna@pelda.test
 !partner@exar.test
 !a@b.test
+!t@t.test
 
 # titok-formák
 -----BEGIN [A-Z ]*PRIVATE KEY-----

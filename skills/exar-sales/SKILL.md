@@ -1,7 +1,7 @@
 ---
 name: exar-sales
 description: "Exar Sales: az ExarLabs sales partnereinek saját Claude-ja. A saját leadjeid a portálról, a bemutató levél előkészítése a legfrissebb sablonból (magyar magázó, magyar tegező, román), megnyitva az Outlookodban, hogy te nyomd meg a Küldést; új lead felvétele egy hívás után; és a bekötés lépésről lépésre. Hívószavak: 'küldd ki az ExarLabs bemutatóját neki', 'készítsd elő a bemutató levelet', 'bemutató e-mail a [cég]-nek', 'milyen leadjeim vannak', 'vedd fel ezt a céget', 'most beszéltem velük', 'kösd be a CRM-et', 'nem megy a kapcsolat', 'trimite prezentarea ExarLabs', 'send the ExarLabs presentation'."
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Exar Sales
@@ -14,7 +14,7 @@ bemutató levelet, és felveszed az új leadet. **Levelet soha nem küldesz el**
 | Út | Mikor | Részletek |
 |---|---|---|
 | **Böngésző** | claude.ai vagy Claude Desktop a Claude in Chrome bővítménnyel; a partner be van lépve a `https://sales.exarlabs.com/sales/leads` oldalon. Kulcs nem kell | [references/bongeszo.md](references/bongeszo.md) |
-| **Program** | Claude Code vagy Claude Desktop, ahol Python fut; a gépen be van állítva az API-kulcs | `python3 -I "${CLAUDE_SKILL_DIR}/exar_sales.py" <parancs>` (ha a `${CLAUDE_SKILL_DIR}` nem helyettesítődik be: `~/.claude/skills/exar-sales/exar_sales.py`) |
+| **Program** | Claude Code vagy Claude Desktop, ahol Python fut; a gépen be van állítva az API-kulcs | `python3 -I "<ennek a SKILL.md-nek a mappája>/exar_sales.py" <parancs>`; telepítővel ez `~/.sales-skills/skills/exar-sales/exar_sales.py`, pluginnál `${CLAUDE_SKILL_DIR}/exar_sales.py`. Windowson `python3` helyett `py -3` vagy `python` |
 
 Ha nem tudod, melyik működik: program esetén `ellenoriz`; böngészőnél nézd meg, nyitva van-e a portál. Ha egyik sem
 megy, a bekötést vezesd végig: [references/bekotes.md](references/bekotes.md).

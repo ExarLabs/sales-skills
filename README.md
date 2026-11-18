@@ -10,12 +10,18 @@ megnyitja az Outlookodban. A Küldést te nyomod meg. Egy hívás után az új c
 
 ## Három perc alatt
 
-1. **Letöltés:** a legfrissebb kiadás [`exar-sales.zip`](https://github.com/ExarLabs/sales-skills/releases/latest/download/exar-sales.zip) fájlja.
-2. **Telepítés:** claude.ai vagy Claude Desktop: Beállítások, Képességek (Capabilities), Skills, feltöltés. Claude
-   Code: `/plugin marketplace add ExarLabs/sales-skills`, majd `/plugin install exar-sales@sales-skills`.
-   Részletek: [docs/telepites.md](docs/telepites.md).
-3. **Bekötés:** lépj be a `https://sales.exarlabs.com/sales/leads` oldalon, és mondd a Claude-nak: „Kösd be az Exar
-   Sales-t.” Végigvezet. Leírás: [docs/bekotes.md](docs/bekotes.md).
+Másold be a Claude-nak (Claude Code, vagy a Claude Desktop Code lapja):
+
+> Olvasd el a https://exarlabs.com/sales-skills oldalt, és telepítsd az Exar Sales skillt.
+
+A Claude letölti ezt a repót egy rejtett mappába (`~/.sales-skills`), beköti a skillt, és végigvezet a portál
+bekötésén. A skill ezután minden használatkor magától frissül. Az agentnek szóló lépések:
+[install/INSTALL.md](install/INSTALL.md).
+
+Más utak (csak ha a fenti nem megy): plugin (`/plugin marketplace add ExarLabs/sales-skills`, majd
+`/plugin install exar-sales@sales-skills`; Cowork-ben ugyanez a Plugins menüből), vagy sima claude.ai beszélgetéshez a
+[`exar-sales.zip`](https://github.com/ExarLabs/sales-skills/releases/latest/download/exar-sales.zip) feltöltése.
+Részletek: [docs/telepites.md](docs/telepites.md).
 
 Utána így használod:
 
@@ -36,8 +42,8 @@ Utána így használod:
 | A CRM (portál) bekötése | [docs/bekotes.md](docs/bekotes.md) |
 | A program (Claude Code, Desktop) | [skills/exar-sales/exar_sales.py](skills/exar-sales/exar_sales.py) |
 
-A sablonokat a skill minden levélnél innen olvassa, ezért egy javítás a repóban azonnal minden partnernél érvényes;
-újratelepíteni csak akkor kell, ha a skill maga változik.
+A sablonokat a skill minden levélnél innen olvassa, és a telepített skill minden használat elején frissíti magát,
+ezért egy javítás a repóban azonnal minden partnernél érvényes. Újra feltölteni csak a zipes utat kell.
 
 ## Biztonság
 

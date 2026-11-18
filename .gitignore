@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+*.tmp
+dist/
+
+# Helyi, karbantartói tiltólista (nincs a repóban)
+scripts/tiltolista.local.txt

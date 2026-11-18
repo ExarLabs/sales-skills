@@ -1,0 +1,25 @@
+# Kiadási tiltólista (általános, a CI ezt futtatja): soronként egy reguláris kifejezés,
+# kis- és nagybetűtől függetlenül. Az ékezetes és az ékezet nélküli alakot is vizsgáljuk.
+# Sor, amely "!"-lel kezdődik: engedett kivétel (szó szerinti egyezés); a találatból kivesszük.
+# A karbantartói, belső mintákat a scripts/tiltolista.local.txt tartalmazza (nincs a repóban).
+
+!contact@exar.ro
+!127.0.0.1
+# a tesztek kitalált címei (a .test végződés foglalt, nem létező tartomány)
+!anna@pelda.test
+!partner@exar.test
+!a@b.test
+
+# titok-formák
+-----BEGIN [A-Z ]*PRIVATE KEY-----
+\bsk-[A-Za-z0-9_-]{20,}
+\b[a-z]{2,5}_[A-Za-z0-9]{32,}\b
+\bgh[pousr]_[A-Za-z0-9]{30,}
+\bAKIA[0-9A-Z]{16}\b
+token [0-9a-f]{10,}:[0-9a-f]{10,}
+api_secret"\s*:\s*"[^"<]
+password\s*[=:]\s*[^\s<]
+# általános e-mail-cím (az engedett kivételek fent)
+[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[a-z]{2,}
+# általános IPv4-cím (a localhost kivétel fent)
+\b(\d{1,3}\.){3}\d{1,3}\b

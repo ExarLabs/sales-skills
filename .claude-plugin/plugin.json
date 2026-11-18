@@ -1,0 +1,9 @@
+{
+  "name": "exar-sales",
+  "version": "0.1.0",
+  "description": "Exar Sales: a saját leadjeid, a bemutató levél (magyar magázó, tegező, román) és az új lead felvétele, a saját Claude-odból.",
+  "author": {"name": "ExarLabs"},
+  "homepage": "https://github.com/ExarLabs/sales-skills",
+  "repository": "https://github.com/ExarLabs/sales-skills",
+  "license": "MIT"
+}
